@@ -23,7 +23,8 @@ def genPass(passLength, includeUpper, includeLower, includeNumbers, includeSymbo
 
 # ^ Main
 def main():
-    print(""" ██████ ███████████████████     ████████████████████      ███████████████    █████████████ ███████████████████████     
+    print(""" 
+    █████████████████████████     ████████████████████      ███████████████    █████████████ ███████████████████████     
     ██   ███   ███    ██    ██     ███    ███   ███   ██    ██     ██    ████   ███    ██   ███   ██ ██ ██    ███   ██    
     ██████████████████████████  █  ███    █████████   ██    ██   ███████ ██ ██  ██████ █████████████ ██ ██    ███████     
     ██    ██   ██    ██    ███ ███ ███    ███   ███   ██    ██    ███    ██  ██ ███    ██   ███   ██ ██ ██    ███   ██    
@@ -52,6 +53,9 @@ def main():
         print("\n")
         choice = input("Do you want to generate another password?").lower()
         if choice == "n":
+            with open("passwords.txt", "a") as file:
+                file.write(f"{password}\n")
+            print("Password saved to passwords.txt")
             break
         print("\n\n\n\n\n\n")
 
